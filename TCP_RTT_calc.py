@@ -7,6 +7,8 @@ def read_data():
 	comando = 'ping -c ' + qtd + ' ' + url
 
 	saida_sub = subprocess.getoutput(comando)
+	print (saida_sub)
+	print ()
 
 	rtts = saida_sub.split(' ')
 
@@ -20,7 +22,7 @@ def read_data():
 	result = []
 	for v in l:
 		if len(v) > 0:
-			result.append(int(v))
+			result.append(float(v))
 
 	return result
 
