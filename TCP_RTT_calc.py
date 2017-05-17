@@ -7,6 +7,7 @@ def read_data():
 	comando = 'ping -c ' + qtd + ' ' + url
 
 	saida_sub = subprocess.getoutput(comando)
+
 	print (saida_sub)
 	print ()
 
@@ -44,9 +45,9 @@ def calcular(data):
 
 		media  = 0.875 * media + 0.125 * rttatual
 		desvio = 0.75 * desvio + 0.25 *  abs(rttatual - media)
-		print ("Media = " + str(0.875) + " * media" + " + " + "0.125 "  + " * " + str(rttatual) + " = " + str(media) + " ")
-		print ("desvio = " + "0.75" + " * " + "desvio" + " + " + " 0.25" + " * |media -  rtt| = "   + str(desvio) + "\n")
+		print (str(i) + " Media = " + str(0.875) + " * media" + " + " + "0.125 "  + " * " + str(rttatual) + " = " + str(media) + " ")
+		print (str(i) + " Desvio = " + "0.75" + " * " + "desvio" + " + " + " 0.25" + " * |media -  rtt| = "   + str(desvio) + "\n")
 
-
+	print ("Timeout total: " + str(rttatual + 4 * desvio))
 
 calcular(read_data())
