@@ -28,8 +28,13 @@ class TCPClient {
 			outToServer.writeUTF(requisicao + '\n');
 			// Esperar resposta do servidor
 			resposta = inFromServer.readUTF();
-			System.out.println("FROM SERVER: " + resposta);
+
 			clientSocket.close();
+
+			if (requisicao.equalsIgnoreCase("\\CLOSE"))
+				return;
+
+			System.out.println("FROM SERVER: " + resposta);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -38,6 +43,7 @@ class TCPClient {
 	private static void showOptions() {
 		System.out.println("\\UPTIME - Server execution time");
 		System.out.println("\\REQNUM - Quantity of the server requests");
+		System.out.println("\\CLOSE - Client stop");
 		System.out.println("Write your choice: ");
 	}
 }
