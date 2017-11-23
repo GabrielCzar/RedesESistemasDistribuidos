@@ -8,8 +8,7 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class Server implements Calc {
 
-    public Server() {
-    }
+    public Server() {}
 
     @Override
     public String sayHello() throws RemoteException {
@@ -21,15 +20,17 @@ public class Server implements Calc {
         return n1 * n2;
     }
 
-
-    public double soma(double n1, double n2) throws RemoteException {
+    @Override
+    public double sum(double n1, double n2) throws RemoteException {
         return n1 + n2;
     }
     
+    @Override
     public double sub(double n1, double n2) throws RemoteException {
         return n1 - n2;
     }
     
+    @Override
     public double div(double n1, double n2) throws RemoteException {
         return n1 / n2;
     }

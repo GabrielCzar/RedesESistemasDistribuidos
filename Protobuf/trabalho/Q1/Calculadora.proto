@@ -1,0 +1,25 @@
+syntax = "proto3";
+package br.ufc.quixada.calc;
+
+option java_package = "br.ufc.quixada.calc";
+option java_outer_classname = "Calculadora";
+
+message Request {
+    int32 id = 1;
+    double n1 = 2;
+    double n2 = 3;
+
+    enum Operacao {
+        SOM = 0;
+        SUB = 1;
+        MUL = 2;
+        DIV = 3;
+    }
+
+    Operacao op = 4;
+}
+
+message Reply {
+    int32 id = 1;
+    double res = 2;
+}

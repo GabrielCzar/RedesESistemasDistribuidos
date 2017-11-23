@@ -1,0 +1,23 @@
+syntax="proto3";
+
+package br.ufc.quixada.services;
+
+option java_package = "br.ufc.quixada.services";
+option java_outer_classname = "Services";
+
+enum Type {
+  IMPRESSION = 0;
+  CALCULATOR = 1;
+  PROJECTOR = 2;
+}
+
+message Request {
+   int32 id = 1;
+   Type op = 3;
+}
+
+message Reply {
+  int32 id = 1;
+  int32 port = 2;
+  string ip = 3;
+}
