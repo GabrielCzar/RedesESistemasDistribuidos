@@ -30,13 +30,14 @@ public class Server {
 				Socket socket = serverSocket.accept();
 				
 				Request request = Request.parseDelimitedFrom(socket.getInputStream());
-
+				
+				System.out.println("Request from: " + socket.getLocalAddress() + ":" + socket.getPort());
+				
 				Double result = calcule(request);
 					
 				Reply reply = Reply.newBuilder().setId(request.getId()).setRes(result).build();
 				
-				reply.writeDelimitedTo(socket.getOutputStream());
-
+				reply.writeDelimitedTo(socket.getOutputStream());	
 			}
 			
 		} catch (Exception e) {
