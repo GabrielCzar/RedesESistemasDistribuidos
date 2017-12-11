@@ -2,6 +2,7 @@
 
 ## O que é o RabbitMQ?
 
+RabbitMQ is a message-queueing software called a message broker or queue manager. Simply said; It is a software where queues can be defined, applications may connect to the queue and transfer a message onto it.
 
 ---
 
