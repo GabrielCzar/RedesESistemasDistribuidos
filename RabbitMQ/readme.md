@@ -25,10 +25,10 @@
 
 ###### Outras informações:
 
-- Exchange: É uma agente de roteamento, definido por host no RabbitMQ.
+- Exchange: É uma agente de roteamento, definido por host no RabbitMQ. Recebe mensagens dos produtores e envia as filas dependendo das regras definidas pelo tipo do contexto de troca.
 
 - Binding: É um 'link' para vincular uma fila (queue) a um exchange.
 
 - Routing Key: É um atributo de mensagem. O exchange pode observar esta chave ao decidir como enchaminhar a mensagem para filas (dependendo do tipo de exchange).
 
-- Queue: Fila é uma estrutura de dados dinâmica sujeita a uma regra de operação: O primeiro a ser inserido será o primeiro a ser removido ou finalizado (FIFO).
+- Queue: Fila é uma estrutura de dados dinâmica sujeita a uma regra de operação: O primeiro a ser inserido será o primeiro a ser removido ou finalizado (FIFO). No RabbitMQ é utilizada como buffer para as mensagens.
